@@ -40,6 +40,7 @@
         <option value="Vietnamese">Vietnamese</option>
       </select>
     </div>
+
     <div id="mealtype-label">
       <label for="mealtype">Choose the type of meal:</label>
       <select name="mealtype" id="mealtype">
@@ -60,6 +61,7 @@
         <option value="drink">Drink</option>
       </select>
     </div>
+
     <div>
       <form id="search-form">
         <label for="search">Search for a recipe:</label>
@@ -70,5 +72,54 @@
     <div id="recipe-list">
     </div>
     <div id="selected-recipe"></div>
+    
+    <div id="day-of-the-week">
+      <label for="day">Which day did you want?:</label>
+      <select name="day" id="day">
+        <option value="" selected>Select an option...</option>
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+        <option value="Saturday">Saturday</option>
+        <option value="Sunday">Sunday</option>
+      </select>
+    </div>
+
+    <div id="time-of-day">
+      <label for="time">What time did you want?:</label>
+      <select name="time" id="time">
+        <option value="" selected>Select an option...</option>
+        <option value="Morning">Morning</option>
+        <option value="Noon">Noon</option>
+        <option value="Evening">Evening</option>
+      </select>
+    </div>
+
+    <div>
+      <form id="calendar-choice">
+        <label for="search">Put recipe on the calendar!</label>
+        <input type="submit" value="Daily-Choice" />
+      </form>
+    </div>
+    <div id="results">
+      <ul id="recipe-list"></ul>
+    </div>
+
+    <form id="recipe-choice">
+      <h4>Your recipe here</h4>
+      <label for="name">Name: </label>
+      <input type="text" name="name" id="new-name" />
+      <label for="restaurant">Restaurant: </label>
+      <input type="text" name="restaurant" id="new-restaurant" />
+      <label for="image">Image: </label>
+      <input type="text" name="image" id="new-image" />
+      <label for="rating">Rating: </label>
+      <input type="number" name="rating" id="new-rating" />
+      <label for="new-comment">Comment: </label>
+      <textarea name="new-comment" id="new-comment"></textarea>
+      <input type="submit" value="Create" />
+    </form>
   </body>
 </html>

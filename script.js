@@ -64,4 +64,28 @@ function getInstructions(id) {
         .then(instructions => console.log(instructions))
 }
 
+// function getSelectedRecipe(e) {
+//     e.preventDefault();
+//     const dayInput = document.getElementById("day").value;
+//     const timeInput = document.getElementById("time").value;
+// }
+
 listenSubmit();
+
+
+
+//const typeInput = document.getElementById("mealtype").value;
+//     let url = `${requestURL}${searchInput}&apiKey=${apiKey}`;
+//     if (cuisineInput != "" && typeInput == "") {
+//         url = `${requestURL}${searchInput}&cuisine=${cuisineInput}&apiKey=${apiKey}`;
+//     } else if (typeInput != "" && cuisineInput == "") {
+//         url = `${requestURL}${searchInput}&type=${typeInput}&apiKey=${apiKey}`;
+//     } else if (typeInput != "" && cuisineInput != "") {
+//         url = `${requestURL}${searchInput}&type=${typeInput}&cuisine=${cuisineInput}&apiKey=${apiKey}`;
+//     }
+//     console.log(searchInput);
+
+//     fetch(url)
+//         .then(res => res.json())
+//         .then(recipes => displayRecipes(recipes))
+//     e.target.reset();
