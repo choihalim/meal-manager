@@ -1,4 +1,3 @@
-// const requestURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=";
 const requestURL = "https://api.spoonacular.com/recipes/complexSearch?query=";
 
 function listenSubmit() {
@@ -25,7 +24,7 @@ function getRecipes(e) {
         url = `${requestURL}${searchInput}&type=${typeInput}&cuisine=${cuisineInput}&apiKey=${apiKey}`;
     }
     console.log(searchInput);
-    
+
     fetch(url)
         .then(res => res.json())
         .then(recipes => displayRecipes(recipes))
@@ -38,13 +37,31 @@ function displayRecipes(recipes) {
     const recipeList = document.getElementById("recipe-list");
 
     recipes.results.forEach(recipe => {
-        const recipeTitle = document.createElement("h3");
         const recipeImage = document.createElement("img");
-        recipeTitle.textContent = recipe.title;
         recipeImage.src = recipe.image;
-        recipeList.appendChild(recipeTitle);
+        recipeImage.addEventListener("click", () => displaySelectedRecipe(recipe));
         recipeList.appendChild(recipeImage);
     });
+}
+
+function displaySelectedRecipe(recipe) {
+    const selectedArea = document.getElementById("selected-recipe");
+    selectedArea.innerHTML = "";
+    const recipeId = recipe.id;
+    const recipeTitle = document.createElement("h3");
+    const recipeImage = document.createElement("img");
+    recipeImage.src = recipe.image;
+    recipeTitle.textContent = recipe.title;
+    selectedArea.appendChild(recipeTitle);
+    selectedArea.appendChild(recipeImage);
+    getInstructions(recipeId);
+}
+
+function getInstructions(id) {
+    const baseUrl = `https://api.spoonacular.com/recipes/${id}/analyzedInstructions?query=&apiKey=${apiKey}`;
+    fetch(baseUrl)
+        .then(res => res.json())
+        .then(instructions => console.log(instructions))
 }
 
 listenSubmit();
