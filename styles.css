@@ -31,3 +31,7 @@ body {
 #recipe-list img:last-child {
     margin-right: 0;
 }
+
+#selected-recipe-instructions {
+    list-style-type: none;
+}
