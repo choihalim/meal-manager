@@ -59,6 +59,8 @@ function displaySelectedRecipe(recipe) {
     selectedArea.appendChild(recipeImage);
     selectedArea.appendChild(instructionBtn);
     listenInstructionBtn(recipeId);
+    activateTrackerForm();
+    listenTrackerForm(recipe);
 }
 
 function getInstructions(id) {
@@ -94,10 +96,37 @@ function listenInstructionBtn(id) {
     });
 }
 
-// function getSelectedRecipe(e) {
-//     e.preventDefault();
-//     const dayInput = document.getElementById("day").value;
-//     const timeInput = document.getElementById("time").value;
-// }
+function activateTrackerForm() {
+    const trackerFormSection = document.getElementById("tracker-form-section");
+    trackerFormSection.removeAttribute("hidden");
+}
+
+function listenTrackerForm(recipe) {
+    const trackerForm = document.getElementById("tracker-form");
+    trackerForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const dayInput = document.getElementById("day").value;
+        const timeInput = document.getElementById("time").value;
+        if (dayInput == "" || timeInput == "") {
+            alert("You must select a day/time!")
+            return
+        } else {
+            const dayTime = `${dayInput}-${timeInput}`;
+            console.log(dayTime);
+            updateTracker(recipe, dayTime);
+        }
+    })
+}
+
+function updateTracker(recipe, dayTime) {
+    const entry = document.getElementById(dayTime);
+    entry.innerHTML = "";
+    const trackerImg = document.createElement("img");
+    const trackerTitle = document.createElement("h6"); 
+    trackerImg.src = recipe.image;
+    trackerTitle.textContent = recipe.title;
+    entry.appendChild(trackerImg);
+    entry.appendChild(trackerTitle);
+}
 
 listenSubmit();
