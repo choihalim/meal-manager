@@ -35,3 +35,10 @@ body {
 #selected-recipe-instructions {
     list-style-type: none;
 }
+
+#tracker table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}

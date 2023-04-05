@@ -69,61 +69,86 @@
         <input type="submit" value="Submit" />
       </form>
     </div>
-    <div id="recipe-list">
-    </div>
-    <div id="selected-recipe">
-    </div>
+    <div id="recipe-list"></div>
+    <div id="selected-recipe"></div>
     <div>
       <ul id="selected-recipe-instructions"></ul>
     </div>
-    
-    <div id="day-of-the-week">
-      <label for="day">Which day did you want?:</label>
-      <select name="day" id="day">
-        <option value="" selected>Select an option...</option>
-        <option value="Monday">Monday</option>
-        <option value="Tuesday">Tuesday</option>
-        <option value="Wednesday">Wednesday</option>
-        <option value="Thursday">Thursday</option>
-        <option value="Friday">Friday</option>
-        <option value="Saturday">Saturday</option>
-        <option value="Sunday">Sunday</option>
-      </select>
-    </div>
 
-    <div id="time-of-day">
-      <label for="time">What time did you want?:</label>
-      <select name="time" id="time">
-        <option value="" selected>Select an option...</option>
-        <option value="Morning">Morning</option>
-        <option value="Noon">Noon</option>
-        <option value="Evening">Evening</option>
-      </select>
-    </div>
-
-    <div>
-      <form id="calendar-choice">
-        <label for="search">Put recipe on the calendar!</label>
-        <input type="submit" value="Daily-Choice" />
+    <div id="tracker-form-section" hidden>
+      <form id="tracker-form">
+        <div id="day-of-the-week">
+          <label for="day">Which day did you want?:</label>
+          <select name="day" id="day">
+            <option value="" selected>Select an option...</option>
+            <option value="monday">Monday</option>
+            <option value="tuesday">Tuesday</option>
+            <option value="wednesday">Wednesday</option>
+            <option value="thursday">Thursday</option>
+            <option value="friday">Friday</option>
+            <option value="saturday">Saturday</option>
+            <option value="sunday">Sunday</option>
+          </select>
+        </div>
+        <div id="time-of-day">
+          <label for="time">What time did you want?:</label>
+          <select name="time" id="time">
+            <option value="" selected>Select an option...</option>
+            <option value="morning">Morning</option>
+            <option value="noon">Noon</option>
+            <option value="evening">Evening</option>
+          </select>
+        </div>
+        <input type="submit" value="Add to Tracker" />
       </form>
     </div>
     <div id="results">
       <ul id="recipe-list"></ul>
     </div>
 
-    <form id="recipe-choice">
-      <h4>Your recipe here</h4>
-      <label for="name">Name: </label>
-      <input type="text" name="name" id="new-name" />
-      <label for="restaurant">Restaurant: </label>
-      <input type="text" name="restaurant" id="new-restaurant" />
-      <label for="image">Image: </label>
-      <input type="text" name="image" id="new-image" />
-      <label for="rating">Rating: </label>
-      <input type="number" name="rating" id="new-rating" />
-      <label for="new-comment">Comment: </label>
-      <textarea name="new-comment" id="new-comment"></textarea>
-      <input type="submit" value="Create" />
-    </form>
+    <div id="tracker">
+      <table>
+        <tr>
+          <th></th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+          <th>Saturday</th>
+          <th>Sunday</th>
+        </tr>
+        <tr>
+          <th>Morning</th>
+          <td id="monday-morning"></td>
+          <td id="tuesday-morning"></td>
+          <td id="wednesday-morning"></td>
+          <td id="thursday-morning"></td>
+          <td id="friday-morning"></td>
+          <td id="saturday-morning"></td>
+          <td id="sunday-morning"></td>
+        </tr>
+        <tr>
+          <th>Noon</th>
+          <td id="monday-noon"></td>
+          <td id="tuesday-noon"></td>
+          <td id="wednesday-noon"></td>
+          <td id="thursday-noon"></td>
+          <td id="friday-noon"></td>
+          <td id="saturday-noon"></td>
+          <td id="sunday-noon"></td>
+        </tr>
+        <tr>
+          <th>Evening</th>
+          <td id="monday-evening"></td>
+          <td id="tuesday-evening"></td>
+          <td id="wednesday-evening"></td>
+          <td id="thursday-evening"></td>
+          <td id="friday-evening"></td>
+          <td id="saturday-evening"></td>
+          <td id="sunday-evening"></td>
+        </tr>
+      </table>
+    </div>
   </body>
 </html>
