@@ -8,6 +8,15 @@
     <script defer type="text/javascript" src="./script.js"></script>
   </head>
   <body>
+    <h1>Meal Manager 🧑‍🍳</h1>
+    <div>
+      <form id="search-form">
+        <label for="search">Search for a recipe:</label>
+        <input type="text" id="search" name="ingredients" />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+    
     <div id="cuisine-label">
       <label for="cuisine">Choose a cuisine:</label>
       <select name="cuisine" id="cuisine">
@@ -62,13 +71,6 @@
       </select>
     </div>
 
-    <div>
-      <form id="search-form">
-        <label for="search">Search for a recipe:</label>
-        <input type="text" id="search" name="ingredients" />
-        <input type="submit" value="Submit" />
-      </form>
-    </div>
     <div id="recipe-list"></div>
     <div id="selected-recipe"></div>
     <div>
