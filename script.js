@@ -10,7 +10,7 @@ function listenRandomRecipeSubmit() {
     const form = document.getElementById("random-recipe");
     form.addEventListener("submit", (e) => randomRecipeGenerator(e));
 }
-//
+
 function cleanResults() {
     const recipeList = document.getElementById("recipe-list");
     recipeList.innerHTML = "";
@@ -23,26 +23,21 @@ function randomRecipeGenerator(e){
 
     fetch(randomUrl)
         .then(res => res.json())
-        // .then(recipes => displayRandomRecipe(recipes))
-        .then(console.log)
-    //e.target.reset();
+        .then(recipes => displayRandomRecipe(recipes))
 }
-//
 
 //display random recipe function
 function displayRandomRecipe(recipes) {
-    //cleanResults();
-    console.log(recipes.results);
+    console.log(recipes);
     const recipeList = document.getElementById("recipe-list");
 
-    recipes.results.forEach(recipe => {
+    recipes.recipes.forEach(recipe => {
         const recipeImage = document.createElement("img");
         recipeImage.src = recipe.image;
         recipeImage.addEventListener("click", () => displaySelectedRecipe(recipe));
         recipeList.appendChild(recipeImage);
     });
 }
-//
 
 function getRecipes(e) {
     e.preventDefault();
@@ -92,6 +87,7 @@ function displaySelectedRecipe(recipe) {
     selectedArea.appendChild(recipeTitle);
     selectedArea.appendChild(recipeImage);
     selectedArea.appendChild(instructionBtn);
+    cleanInstructions();
     listenInstructionBtn(recipeId);
     activateTrackerForm();
     listenTrackerForm(recipe);
@@ -104,10 +100,15 @@ function getInstructions(id) {
         .then(instructionData => displayInstructions(instructionData))
 }
 
+function cleanInstructions() {
+    const instructionSection = document.getElementById("selected-recipe-instructions");
+    instructionSection.innerHTML = "";
+}
+
 function displayInstructions(instructionData) {
     console.log(instructionData[0].steps);
     const instructionSection = document.getElementById("selected-recipe-instructions");
-    instructionSection.innerHTML = "";
+    // instructionSection.innerHTML = "";
     instructionData[0].steps.forEach(step => {
         let instructionMsg = document.createElement("li")
         instructionMsg.textContent = `${step.number}. ${step.step}`
