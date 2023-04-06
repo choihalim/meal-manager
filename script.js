@@ -5,10 +5,44 @@ function listenSubmit() {
     form.addEventListener("submit", (e) => getRecipes(e));
 }
 
+//random recipe submit
+function listenRandomRecipeSubmit() {
+    const form = document.getElementById("random-recipe");
+    form.addEventListener("submit", (e) => randomRecipeGenerator(e));
+}
+//
 function cleanResults() {
     const recipeList = document.getElementById("recipe-list");
     recipeList.innerHTML = "";
 }
+
+//random recipe generator
+function randomRecipeGenerator(e){
+    e.preventDefault();
+    const randomUrl = `https://api.spoonacular.com/recipes/random?&apiKey=${apiKey}`;
+
+    fetch(randomUrl)
+        .then(res => res.json())
+        // .then(recipes => displayRandomRecipe(recipes))
+        .then(console.log)
+    //e.target.reset();
+}
+//
+
+//display random recipe function
+function displayRandomRecipe(recipes) {
+    //cleanResults();
+    console.log(recipes.results);
+    const recipeList = document.getElementById("recipe-list");
+
+    recipes.results.forEach(recipe => {
+        const recipeImage = document.createElement("img");
+        recipeImage.src = recipe.image;
+        recipeImage.addEventListener("click", () => displaySelectedRecipe(recipe));
+        recipeList.appendChild(recipeImage);
+    });
+}
+//
 
 function getRecipes(e) {
     e.preventDefault();
@@ -130,3 +164,4 @@ function updateTracker(recipe, dayTime) {
 }
 
 listenSubmit();
+listenRandomRecipeSubmit();
