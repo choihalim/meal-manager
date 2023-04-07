@@ -1,21 +1,39 @@
-# meal-manager
-THE MEAL MANAGER
-By: Josh Fowler, Halim Choi, Masad Ilyas, Andrew O’Brien
+# Meal Manager
+## By: Josh Fowler, Halim Choi, Masad Ilyas, Andrew O’Brien
 
-This application allows users to plan their meals for the week using provided criteria to choose recipes that match their input and puts it into the time slot of their choice on the calendar. Also generates random recipes for users who aren't picky.
+### Purpose:
+Allow users to generate recipe ideas (random or by user criteria) to plan their meals for the week using provided criteria.
+Based on user input, the recipe is inserted into the time slot of their choice on the calendar.
 
-The core features of your MVP:
-Provides recipes based on user input
-Creates a calendar to display weekly meal plan
-    Displays schedule by day and time slot (morning, noon and night)
-    Users can add their queried recipe onto their schedule
+### Core Features:
+- Provides recipes based on user input
 
-Spoonacular API (https://spoonacular.com/food-api)
-    - GET requests to fetch recipe data and display them on the page
-    - Takes user input to find recipes matching their inquiries
+- Creates a calendar to display weekly meal plan
+
+- Displays schedule by day and time slot (morning, noon and night)
+
+- Users can add their queried recipe onto their schedule
+
+[Spoonacular API](https://spoonacular.com/food-api)
+    - created GET requests to fetch recipe data and display them on the page
+
+    Endpoints:
+
+        ```bash
+        GET
+        https://api.spoonacular.com/recipes/complexSearch
+
+        GET
+        https://api.spoonacular.com/recipes/random
+
+        GET
+        https://api.spoonacular.com/recipes/{id}/analyzedInstructions
+        ```
+        
 
 
-Fulfilling requirements of the project:
-    - We are utilizing an API in our code which will have a large database of information to pull from and display
-    - Event listeners will be employed for user input submissions, dropdowns and clicks
-    - An array iteration for traversing the data received from the api
+
+### Fulfilling Requirements of the Project:
+- We are utilizing an API in our code which will have a large database of information to pull from and display
+- Event listeners will be employed for user input submission, option selections and clicks
+- Array iterations for traversing the data received from the api
