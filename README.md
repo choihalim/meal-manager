@@ -17,18 +17,18 @@ Based on user input, the recipe is inserted into the time slot of their choice o
 [Spoonacular API](https://spoonacular.com/food-api)
     - created GET requests to fetch recipe data and display them on the page
 
-    Endpoints:
+Endpoints:
 
-        ```bash
-        GET
-        https://api.spoonacular.com/recipes/complexSearch
+```
+GET
+https://api.spoonacular.com/recipes/complexSearch
 
-        GET
-        https://api.spoonacular.com/recipes/random
+GET
+https://api.spoonacular.com/recipes/random
 
-        GET
-        https://api.spoonacular.com/recipes/{id}/analyzedInstructions
-        ```
+GET
+https://api.spoonacular.com/recipes/{id}/analyzedInstructions
+```
         
 
 
