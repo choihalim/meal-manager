@@ -108,7 +108,7 @@ function cleanInstructions() {
 function displayInstructions(instructionData) {
     console.log(instructionData[0].steps);
     const instructionSection = document.getElementById("selected-recipe-instructions");
-    // instructionSection.innerHTML = "";
+    instructionSection.innerHTML = "";
     instructionData[0].steps.forEach(step => {
         let instructionMsg = document.createElement("li")
         instructionMsg.textContent = `${step.number}. ${step.step}`
