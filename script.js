@@ -5,9 +5,38 @@ function listenSubmit() {
     form.addEventListener("submit", (e) => getRecipes(e));
 }
 
+//random recipe submit
+function listenRandomRecipeSubmit() {
+    const form = document.getElementById("random-recipe");
+    form.addEventListener("submit", (e) => randomRecipeGenerator(e));
+}
+
 function cleanResults() {
     const recipeList = document.getElementById("recipe-list");
     recipeList.innerHTML = "";
+}
+
+//random recipe generator
+function randomRecipeGenerator(e){
+    e.preventDefault();
+    const randomUrl = `https://api.spoonacular.com/recipes/random?&apiKey=${apiKey}`;
+
+    fetch(randomUrl)
+        .then(res => res.json())
+        .then(recipes => displayRandomRecipe(recipes))
+}
+
+//display random recipe function
+function displayRandomRecipe(recipes) {
+    console.log(recipes);
+    const recipeList = document.getElementById("recipe-list");
+
+    recipes.recipes.forEach(recipe => {
+        const recipeImage = document.createElement("img");
+        recipeImage.src = recipe.image;
+        recipeImage.addEventListener("click", () => displaySelectedRecipe(recipe));
+        recipeList.appendChild(recipeImage);
+    });
 }
 
 function getRecipes(e) {
@@ -58,6 +87,7 @@ function displaySelectedRecipe(recipe) {
     selectedArea.appendChild(recipeTitle);
     selectedArea.appendChild(recipeImage);
     selectedArea.appendChild(instructionBtn);
+    cleanInstructions();
     listenInstructionBtn(recipeId);
     activateTrackerForm();
     listenTrackerForm(recipe);
@@ -68,6 +98,11 @@ function getInstructions(id) {
     fetch(baseUrl)
         .then(res => res.json())
         .then(instructionData => displayInstructions(instructionData))
+}
+
+function cleanInstructions() {
+    const instructionSection = document.getElementById("selected-recipe-instructions");
+    instructionSection.innerHTML = "";
 }
 
 function displayInstructions(instructionData) {
@@ -130,3 +165,4 @@ function updateTracker(recipe, dayTime) {
 }
 
 listenSubmit();
+listenRandomRecipeSubmit();
