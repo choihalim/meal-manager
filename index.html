@@ -8,60 +8,61 @@
     <script defer type="text/javascript" src="./script.js"></script>
   </head>
   <body>
-    <div id="cuisine-label">
-      <label for="cuisine">Choose a cuisine:</label>
-      <select name="cuisine" id="cuisine">
-        <option value="" selected>Select an option...</option>
-        <option value="African">African</option>
-        <option value="American">American</option>
-        <option value="British">British</option>
-        <option value="Cajun">Cajun</option>
-        <option value="Caribbean">Caribbean</option>
-        <option value="Chinese">Chinese</option>
-        <option value="Eastern European">Eastern European</option>
-        <option value="European">European</option>
-        <option value="French">French</option>
-        <option value="German">German</option>
-        <option value="Greek">Greek</option>
-        <option value="Indian">Indian</option>
-        <option value="Irish">Irish</option>
-        <option value="Italian">Italian</option>
-        <option value="Japanese">Japanese</option>
-        <option value="Jewish">Jewish</option>
-        <option value="Korean">Korean</option>
-        <option value="Latin American">Latin American</option>
-        <option value="Mediterranean">Mediterranean</option>
-        <option value="Mexican">Mexican</option>
-        <option value="Middle Eastern">Middle Eastern</option>
-        <option value="Nordic">Nordic</option>
-        <option value="Southern">Southern</option>
-        <option value="Spanish">Spanish</option>
-        <option value="Thai">Thai</option>
-        <option value="Vietnamese">Vietnamese</option>
-      </select>
+    <h1>Meal Manager 🧑‍🍳</h1>
+    <div id="all-forms">
+      <div id="cuisine-label">
+        <label for="cuisine">Choose a cuisine:</label>
+        <select name="cuisine" id="cuisine">
+          <option value="" selected>Select an option...</option>
+          <option value="African">African</option>
+          <option value="American">American</option>
+          <option value="British">British</option>
+          <option value="Cajun">Cajun</option>
+          <option value="Caribbean">Caribbean</option>
+          <option value="Chinese">Chinese</option>
+          <option value="Eastern European">Eastern European</option>
+          <option value="European">European</option>
+          <option value="French">French</option>
+          <option value="German">German</option>
+          <option value="Greek">Greek</option>
+          <option value="Indian">Indian</option>
+          <option value="Irish">Irish</option>
+          <option value="Italian">Italian</option>
+          <option value="Japanese">Japanese</option>
+          <option value="Jewish">Jewish</option>
+          <option value="Korean">Korean</option>
+          <option value="Latin American">Latin American</option>
+          <option value="Mediterranean">Mediterranean</option>
+          <option value="Mexican">Mexican</option>
+          <option value="Middle Eastern">Middle Eastern</option>
+          <option value="Nordic">Nordic</option>
+          <option value="Southern">Southern</option>
+          <option value="Spanish">Spanish</option>
+          <option value="Thai">Thai</option>
+          <option value="Vietnamese">Vietnamese</option>
+        </select>
+      </div>
+      <div id="mealtype-label">
+        <label for="mealtype">Choose the type of meal:</label>
+        <select name="mealtype" id="mealtype">
+          <option value="" selected>Select an option...</option>
+          <option value="main course">Main Course</option>
+          <option value="side dish">Side Dish</option>
+          <option value="dessert">Dessert</option>
+          <option value="appetizer">Appetizer</option>
+          <option value="salad">Salad</option>
+          <option value="bread">Bread</option>
+          <option value="breakfast">Breakfast</option>
+          <option value="soup">Soup</option>
+          <option value="beverage">Beverage</option>
+          <option value="sauce">Sauce</option>
+          <option value="marinade">Marinade</option>
+          <option value="fingerfood">Fingerfood</option>
+          <option value="snack">Snack</option>
+          <option value="drink">Drink</option>
+        </select>
+      </div>
     </div>
-
-    <div id="mealtype-label">
-      <label for="mealtype">Choose the type of meal:</label>
-      <select name="mealtype" id="mealtype">
-        <option value="" selected>Select an option...</option>
-        <option value="main course">Main Course</option>
-        <option value="side dish">Side Dish</option>
-        <option value="dessert">Dessert</option>
-        <option value="appetizer">Appetizer</option>
-        <option value="salad">Salad</option>
-        <option value="bread">Bread</option>
-        <option value="breakfast">Breakfast</option>
-        <option value="soup">Soup</option>
-        <option value="beverage">Beverage</option>
-        <option value="sauce">Sauce</option>
-        <option value="marinade">Marinade</option>
-        <option value="fingerfood">Fingerfood</option>
-        <option value="snack">Snack</option>
-        <option value="drink">Drink</option>
-      </select>
-    </div>
-
     <div>
       <form id="search-form">
         <label for="search">Search for a recipe:</label>
@@ -79,7 +80,7 @@
     <div id="recipe-list"></div>
     <div id="selected-recipe"></div>
     <div>
-      <ul id="selected-recipe-instructions"></ul>
+      <ul id="selected-recipe-instructions" hidden></ul>
     </div>
 
     <div id="tracker-form-section" hidden>

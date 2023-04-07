@@ -12,6 +12,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: antiquewhite;
 }
 
 #recipe-list {
@@ -41,4 +42,49 @@ th,
 td {
     border: 1px solid black;
     border-collapse: collapse;
+}
+
+#tracker table {
+    width: 100%;
+}
+
+#tracker img {
+    width: 150px;
+}
+
+#all-forms {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#all-forms select {
+    padding: 3%;
+}
+
+#search-form {
+    padding: 5%;
+}
+
+#search-form input[type=submit] {
+    padding: 3%;
+    margin-top: 10px;
+}
+
+#selected-recipe-instructions {
+    background-color: white;
+    border-radius: 25px;
+    border: 2px solid black;
+    padding: 20px;
+    width: 600px;
+    height: auto;
+    text-align: left;
+}
+
+#instruction-btn {
+    padding: 1%;
+}
+
+#tracker-form-section {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
